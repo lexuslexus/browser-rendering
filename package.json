@@ -1,0 +1,27 @@
+{
+  "name": "lexus-jquery",
+  "version": "1.0.0",
+  "title" : "111",
+  "description": "",
+  "author": "Lexus Lin <123285068@qq.com>",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-cmd-concat": "*",
+    "grunt-cmd-transport": "*",
+    "connect-livereload": "*"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "licenses" : "",
+  "main": ""
+}
