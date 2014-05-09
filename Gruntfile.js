@@ -22,6 +22,8 @@ module.exports = function(grunt) {
           // {expand : true, cwd : 'src', src : ['**', '!lib/**'], dest : 'dist'},
           {expand : true, cwd : 'src', src : 'index.html', dest : 'dist'},
           {expand : true, cwd : 'src', src : 'image/**', dest : 'dist'},
+          {expand : true, cwd : 'src', src : 'css/**', dest : 'dist'},
+          {expand : true, cwd : 'src', src : '*.php', dest : 'dist'},
           {expand : true, cwd : 'src/lib/jquery/dist', src : 'jquery.js', dest : 'dist/lib'},
           {expand : true, cwd : 'src/lib/backbone', src : 'backbone.js', dest : 'dist/lib'},
           {expand : true, cwd : 'src/lib/underscore', src : 'underscore.js', dest : 'dist/lib'},
@@ -102,7 +104,7 @@ module.exports = function(grunt) {
         }
       },
       server : {
-        cwd : 'src', expand : true, src : 'common/**/*', dest : 'dist' 
+        cwd : 'src', expand : true, src : 'common/**/*.js', dest : 'dist' 
       }
     },
     concat : {

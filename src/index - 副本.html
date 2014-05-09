@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8" />
+<title>title</title>
+<script>
+var init = {time : +new Date, title : '初始化时间点'},
+tracker = {
+	list : [],
+	add : function(timeObj){
+		var list = this.list, len = list.length;
+		if(len != 0){
+			console.log(list[len - 1].title + ' - ' + timeObj.title + ' 总共消耗: ' + (timeObj.time - list[len - 1].time));
+		}
+		list.push(timeObj);
+	}
+};
+tracker.add(init); 
+</script>
+<style>
+	img { width: 300px; height: 100px;}
+</style>
+
+
+<script>
+var t = {time : +new Date, title : '执行完head js时间点'}
+tracker.add(t);
+</script>
+<body>
+a
+
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/a.php"></script>
+
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/b.php"></script>
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/c.php"></script>
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/d.php"></script>
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/e.php"></script>
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/f.php"></script>
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/g.php"></script>
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/h.php"></script>
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/i.php"></script>
+<script type="text/javascript" src="http://192.168.52.1/test/browser_rendering/dist/j.php"></script>
+<!-- <link rel="stylesheet" type="text/css" href=""> -->
+<script src="lib/sea-debug.js"></script>
+<img src="http://192.168.52.1/test/browser_rendering/dist/image/1.jpg">
+<img src="http://192.168.52.1/test/browser_rendering/dist/image/2.jpg">
+<img src="http://192.168.52.1/test/browser_rendering/dist/image/3.jpg">
+<img src="http://192.168.52.1/test/browser_rendering/dist/image/4.jpg">
+
+<link rel="stylesheet" href="http://192.168.52.1/test/browser_rendering/dist/css/style.php">
+<script src="lib/underscore.js"></script>
+<img src="http://192.168.52.1/test/browser_rendering/dist/image/5.jpg">
+<img src="http://192.168.52.1/test/browser_rendering/dist/image/6.jpg">
+<img src="http://192.168.52.1/test/browser_rendering/dist/image/7.jpg">
+<img src="http://192.168.52.1/test/browser_rendering/dist/image/8.jpg">
+
+
+<script>
+var t = {time : +new Date, title : '图片dom解析完时间点'}
+tracker.add(t);
+</script>
+<script type="text/javascript">
+// define.amd = true;
+seajs.config({
+	base : './'
+})
+seajs.use('common/a', function(u){
+	// console.log(arguments)
+});
+</script> 
+ 
+<script>
+var t = {time : +new Date, title : '<\/body>前的时间点s'}
+tracker.add(t);
+</script>
+<script>
+window.onload = function(){
+	var t = {time : +new Date, title : 'onload时间点'}
+	tracker.add(t);
+	console.log('总耗时: ' + (+new Date - init.time));
+}
+
+
+</script>
+
+</body>
+</html>
